@@ -4,67 +4,34 @@
   <meta charset="UTF-8">
   <title>Mohamed Ayoub — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 80px 24px;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.2em;
-    }
-    h2 {
-      color: #38bdf8;
-      margin-top: 2em;
-    }
-    p {
-      line-height: 1.6;
-      color: #cbd5f5;
-    }
-    .tag {
-      display: inline-block;
-      background: #1e293b;
-      padding: 6px 12px;
-      border-radius: 6px;
-      margin: 4px 4px 0 0;
-      font-size: 0.85rem;
-    }
-    a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Mohamed Ayoub</h1>
-    <p>Engineering student in Health Informatics.  
-       Interested in cybersecurity, entrepreneurship and data systems.</p>
 
-    <h2>Projects</h2>
-    <p>Power BI healthcare analytics dashboard, cloud infrastructure labs, data pipeline prototypes.</p>
+<div class="cursor"></div>
 
-    <h2>Skills</h2>
-    <div>
-      <span class="tag">Power BI</span>
-      <span class="tag">SQL</span>
-      <span class="tag">Python</span>
-      <span class="tag">Cloud</span>
-      <span class="tag">Healthcare Data</span>
-    </div>
+<section class="hero">
+  <h1 class="reveal">Mohamed Ayoub</h1>
+  <p class="reveal">Health Informatics Engineer • Cybersecurity • Data Systems</p>
+</section>
 
-    <h2>Contact</h2>
-    <p>
-      GitHub: <a href="https://github.com/ELMohamedAyoub">github.com/ELMohamedAyoub</a>
-    </p>
+<section class="about" id="about">
+  <h2 class="reveal">About Me</h2>
+  <p class="reveal">
+    I build intelligent healthcare systems, analytics pipelines, and secure data architectures.
+  </p>
+</section>
+
+<section class="projects">
+  <h2 class="reveal">Projects</h2>
+  <div class="cards">
+    <div class="card reveal">Healthcare BI Dashboard</div>
+    <div class="card reveal">Cloud Infrastructure Lab</div>
+    <div class="card reveal">Secure Data Platform</div>
   </div>
+</section>
+
+<script src="app.js"></script>
 </body>
 </html>
+
