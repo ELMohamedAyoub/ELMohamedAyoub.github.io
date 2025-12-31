@@ -17,8 +17,8 @@ interface IndexProps {
 const Index = ({ currentProfile }: IndexProps) => {
   const handleDownloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/Mohamed_Ayoub_ELMOUSATI_CV.pdf';
-    link.download = 'Mohamed_Ayoub_ELMOUSATI_CV.pdf';
+    link.href = '/resume-a7f8c9e2d4b1.pdf';
+    link.download = 'resume-a7f8c9e2d4b1.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
