@@ -171,7 +171,7 @@ const Hero = ({ currentProfile }: HeroProps) => {
     className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground dark:border-secondary-dark dark:text-secondary-dark dark:hover:bg-secondary-dark/80 dark:hover:text-secondary-foreground"
     asChild
   >
-    <a href="/Mohamed_Ayoub_ELMOUSATI_CV.pdf" download="Mohamed_Ayoub_ELMOUSATI_CV.pdf" className="flex items-center">
+    <a href="/resume-a7f8c9e2d4b1.pdf" download="resume-a7f8c9e2d4b1.pdf" className="flex items-center">
       <Download className="mr-2 h-5 w-5" />
       Download CV
     </a>
