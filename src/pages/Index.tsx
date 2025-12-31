@@ -16,12 +16,7 @@ interface IndexProps {
 
 const Index = ({ currentProfile }: IndexProps) => {
   const handleDownloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/resume-a7f8c9e2d4b1.pdf';
-    link.download = 'resume-a7f8c9e2d4b1.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    window.open('https://www.overleaf.com/read/spnvgcbkswvr#fd0d30', '_blank');
   };
 
   return (
