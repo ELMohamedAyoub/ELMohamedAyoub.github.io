@@ -47,19 +47,6 @@ const InteractiveElement = ({
         />
       )}
       
-      {/* Ripple effect on hover */}
-      {isHovered && (
-        <motion.div
-          className="absolute inset-0 rounded-[inherit] pointer-events-none"
-          initial={{ scale: 1, opacity: 0.5 }}
-          animate={{ scale: 1.1, opacity: 0 }}
-          transition={{ duration: 0.8, repeat: Infinity }}
-          style={{
-            border: `2px solid ${glowColor}`,
-          }}
-        />
-      )}
-      
       {children}
     </Component>
   );
