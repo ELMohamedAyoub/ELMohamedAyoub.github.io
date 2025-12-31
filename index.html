@@ -2,36 +2,406 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Mohamed Ayoub — Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Ayoub - AI Engineer & Full Stack Developer</title>
+  <meta name="description" content="Portfolio of Mohamed Ayoub - Passionate AI/ML Engineer and Full Stack Developer">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
 
-<div class="cursor"></div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">MA</a>
+      <ul class="nav-menu">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-<section class="hero">
-  <h1 class="reveal">Mohamed Ayoub</h1>
-  <p class="reveal">Health Informatics Engineer • Cybersecurity • Data Systems</p>
-</section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="reveal">Hi, I'm <span class="gradient-text">Mohamed Ayoub</span></h1>
+        <div class="typing-container">
+          <h2 class="typing-text"></h2>
+        </div>
+        <p class="hero-description reveal">
+          A passionate engineer and scientist building intelligent systems that solve real-world problems. 
+          Specializing in AI/ML with Python and modern web development with TypeScript.
+        </p>
+        <div class="hero-buttons reveal">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+        <div class="social-links reveal">
+          <a href="https://github.com/ELMohamedAyoub" target="_blank" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/elmohamedayoub" target="_blank" aria-label="LinkedIn">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image reveal">
+        <div class="image-container">
+          <img src="https://avatars.githubusercontent.com/u/79168481?v=4" alt="Mohamed Ayoub">
+          <div class="image-backdrop"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
 
-<section class="about" id="about">
-  <h2 class="reveal">About Me</h2>
-  <p class="reveal">
-    I build intelligent healthcare systems, analytics pipelines, and secure data architectures.
-  </p>
-</section>
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title reveal">About Me</h2>
+      <div class="about-content">
+        <div class="about-text reveal">
+          <h3>Building Tomorrow's Solutions Today</h3>
+          <p>
+            I'm a passionate engineer and scientist with a strong focus on building intelligent systems 
+            that solve real-world problems. My expertise spans across AI/ML development using Python and 
+            modern full-stack web development with TypeScript and JavaScript.
+          </p>
+          <p>
+            With a deep understanding of both the theoretical and practical aspects of software engineering, 
+            I've developed numerous applications ranging from AI-powered healthcare solutions to enterprise 
+            management systems. My approach combines cutting-edge technology with user-centric design to 
+            create impactful solutions.
+          </p>
+          <p class="motto">
+            <i class="fas fa-quote-left"></i>
+            When it rains, it pours.
+            <i class="fas fa-quote-right"></i>
+          </p>
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-number" data-target="9">0</div>
+              <div class="stat-label">Public Repositories</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="222">0</div>
+              <div class="stat-label">Contributions (2025)</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-number" data-target="5">0</div>
+              <div class="stat-label">Major Projects</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="projects">
-  <h2 class="reveal">Projects</h2>
-  <div class="cards">
-    <div class="card reveal">Healthcare BI Dashboard</div>
-    <div class="card reveal">Cloud Infrastructure Lab</div>
-    <div class="card reveal">Secure Data Platform</div>
-  </div>
-</section>
+  <!-- Skills Section -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title reveal">Tech Stack & Skills</h2>
+      <div class="skills-grid">
+        <!-- AI & Data Science -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <i class="fas fa-brain"></i>
+            <h3>AI & Data Science</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Deep Learning</span>
+            <span class="skill-tag">TensorFlow</span>
+            <span class="skill-tag">PyTorch</span>
+            <span class="skill-tag">Scikit-learn</span>
+            <span class="skill-tag">Jupyter</span>
+          </div>
+        </div>
 
-<script src="app.js"></script>
+        <!-- Languages -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <i class="fas fa-code"></i>
+            <h3>Programming Languages</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Dart</span>
+            <span class="skill-tag">HTML/CSS</span>
+          </div>
+        </div>
+
+        <!-- Web Frameworks -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <i class="fas fa-layer-group"></i>
+            <h3>Web Development</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">React.js</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">Express.js</span>
+            <span class="skill-tag">MERN Stack</span>
+            <span class="skill-tag">PERN Stack</span>
+            <span class="skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- Tools & Platforms -->
+        <div class="skill-category reveal">
+          <div class="category-header">
+            <i class="fas fa-tools"></i>
+            <h3>Tools & Platforms</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Git & GitHub</span>
+            <span class="skill-tag">Shell Scripting</span>
+            <span class="skill-tag">CMake</span>
+            <span class="skill-tag">PL/pgSQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title reveal">Featured Projects</h2>
+      <p class="section-subtitle reveal">AI-powered solutions and full-stack applications</p>
+      
+      <div class="projects-grid">
+        <!-- Project 1: Autism Detection -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/AI-Powered-Autism-Detection-Diagnosis-and-Therapy-App" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Dart</span>
+              <span class="tag">Python</span>
+              <span class="tag">AI/ML</span>
+            </div>
+            <h3>AI-Powered Autism Detection & Therapy</h3>
+            <p>A mobile application using AI for early autism diagnosis and personalized therapy suggestions. Combines deep learning models with an intuitive mobile interface.</p>
+            <div class="project-stats">
+              <span><i class="fas fa-star"></i> 1</span>
+              <span><i class="fas fa-code-branch"></i> 1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Post-Surgery Assistant -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/AI-Post-Srugery-Assistant" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Jupyter</span>
+              <span class="tag">Healthcare AI</span>
+            </div>
+            <h3>AI Post-Surgery Assistant</h3>
+            <p>An intelligent system to assist patients with post-surgery care and monitoring. Uses machine learning to provide personalized recovery recommendations.</p>
+          </div>
+        </div>
+
+        <!-- Project 3: LIMS On Steroids -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/LIMSOnSteroids" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Docker</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <h3>LIMS On Steroids</h3>
+            <p>A modern Laboratory Information Management System (LIMS) with enhanced features. Built with TypeScript and modern web technologies for efficient lab management.</p>
+          </div>
+        </div>
+
+        <!-- Project 4: Your AI Doctor -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/Your_AI_Doctor" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">AI</span>
+              <span class="tag">Healthcare</span>
+            </div>
+            <h3>Your AI Doctor</h3>
+            <p>An AI-powered healthcare assistant providing medical information and guidance. Recent project with active development.</p>
+          </div>
+        </div>
+
+        <!-- Project 5: TaskFlow -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/taskflow" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">C#</span>
+              <span class="tag">.NET</span>
+              <span class="tag">Backend</span>
+            </div>
+            <h3>TaskFlow</h3>
+            <p>A task management system built with C# and .NET. Features robust backend architecture and efficient task organization.</p>
+          </div>
+        </div>
+
+        <!-- Project 6: Data Mining Project -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-overlay">
+              <a href="https://github.com/ELMohamedAyoub/DataMining_Project" target="_blank" class="project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-content">
+            <div class="project-tags">
+              <span class="tag">Jupyter</span>
+              <span class="tag">Data Science</span>
+              <span class="tag">Python</span>
+            </div>
+            <h3>Data Mining Project</h3>
+            <p>Comprehensive data mining project showcasing various techniques and algorithms for extracting insights from complex datasets.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="more-projects reveal">
+        <a href="https://github.com/ELMohamedAyoub?tab=repositories" target="_blank" class="btn btn-primary">
+          View All Projects on GitHub <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Stats Section -->
+  <section id="github-stats" class="github-stats">
+    <div class="container">
+      <h2 class="section-title reveal">GitHub Activity</h2>
+      <div class="stats-content reveal">
+        <img src="https://github-readme-stats.vercel.app/api?username=ELMohamedAyoub&show_icons=true&theme=radical&hide_border=true&count_private=true&hide_rank=true" alt="GitHub Stats">
+        <img src="https://github-readme-streak-stats.herokuapp.com/?user=ELMohamedAyoub&theme=radical&hide_border=true" alt="GitHub Streak">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <p class="section-subtitle reveal">I'm always open to connecting with like-minded individuals and exploring new opportunities</p>
+      
+      <div class="contact-content">
+        <div class="contact-info reveal">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-github"></i>
+            </div>
+            <div class="contact-details">
+              <h3>GitHub</h3>
+              <a href="https://github.com/ELMohamedAyoub" target="_blank">@ELMohamedAyoub</a>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fab fa-linkedin"></i>
+            </div>
+            <div class="contact-details">
+              <h3>LinkedIn</h3>
+              <a href="https://linkedin.com/in/elmohamedayoub" target="_blank">Mohamed Ayoub</a>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3>Email</h3>
+              <a href="mailto:contact@mohamedayoub.dev">Get in Touch</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-cta reveal">
+          <h3>Ready to collaborate?</h3>
+          <p>Whether you have a project in mind or just want to chat about technology and innovation, feel free to reach out!</p>
+          <div class="cta-buttons">
+            <a href="https://linkedin.com/in/elmohamedayoub" target="_blank" class="btn btn-primary">
+              <i class="fab fa-linkedin"></i> Connect on LinkedIn
+            </a>
+            <a href="https://github.com/ELMohamedAyoub" target="_blank" class="btn btn-secondary">
+              <i class="fab fa-github"></i> Follow on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Mohamed Ayoub. All rights reserved.</p>
+        <p class="footer-tagline">Built with <i class="fas fa-heart"></i> and lots of coffee</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
-
