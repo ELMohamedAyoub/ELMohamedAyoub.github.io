@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,8 +76,48 @@ const Navigation = () => {
             {/* Theme Toggle Button */}
             <ThemeToggle />
           </div>
+          {/* Mobile hamburger */}
+          <div className="md:hidden">
+            <button
+              aria-label="Toggle menu"
+              onClick={() => setMobileOpen((s) => !s)}
+              className="p-2 rounded-md text-foreground/90 bg-transparent border border-foreground/5"
+            >
+              <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                {mobileOpen ? (
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
       </div>
+      {mobileOpen && (
+        <div className="md:hidden bg-background/80 backdrop-blur-sm py-4">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col space-y-3">
+              {navItems.map((item) => (
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  onClick={() => setMobileOpen(false)}
+                  className={`text-base font-medium transition-colors py-2 ${
+                    activeSection === item.id ? "text-primary" : "text-foreground/80 hover:text-foreground"
+                  }`}
+                >
+                  {item.label}
+                </a>
+              ))}
+              <div className="flex items-center justify-between pt-2">
+                <ThemeToggle />
+                <div />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </motion.nav>
   );
 };
