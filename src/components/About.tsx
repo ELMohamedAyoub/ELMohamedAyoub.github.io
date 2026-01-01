@@ -104,7 +104,7 @@ const About = ({ currentProfile }: AboutProps) => {
                   }}
                   className="flex"
                 >
-                  <span className="text-primary font-semibold min-w-[140px]">{item.label}:</span>
+                  <span className="text-primary font-semibold md:min-w-[140px]">{item.label}:</span>
                   <span className="text-foreground/80">{item.value}</span>
                 </motion.div>
               ))}

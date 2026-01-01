@@ -22,8 +22,12 @@ const ProfileSwitcher = ({ onProfileChange, currentProfile }: ProfileSwitcherPro
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[70]">
       <div className="relative" style={{ perspective: '1200px' }}>
+        {/* Mobile hint text above the circular mobile button */}
+        <div className="fixed md:hidden right-6 bottom-20 flex justify-center pointer-events-none z-[81]">
+          <div className="text-xs text-foreground/95 bg-background/60 px-2 py-1 rounded-md">click to switch</div>
+        </div>
         {/* 3D Card Container */}
         <motion.div
           animate={{ 
@@ -49,16 +53,16 @@ const ProfileSwitcher = ({ onProfileChange, currentProfile }: ProfileSwitcherPro
               rotateY: 5
             }}
             transition={{ duration: 0.2 }}
-            style={{ transformStyle: 'preserve-3d' }}
-            className={`
-              relative flex items-center gap-4 px-10 py-5 rounded-2xl
-              backdrop-blur-md shadow-2xl border-2 overflow-hidden
-              transition-all duration-300 cursor-pointer
-              ${isTechnical
-                ? 'bg-gradient-to-br from-blue-600/95 to-purple-700/95 border-blue-400/40 text-white'
-                : 'bg-gradient-to-br from-emerald-500/95 to-green-700/95 border-emerald-400/40 text-white'
-              }
-            `}
+                style={{ transformStyle: 'preserve-3d' }}
+                className={`
+                  hidden md:flex relative z-50 flex items-center gap-3 px-6 py-3 md:px-10 md:py-5 rounded-2xl
+                  backdrop-blur-md shadow-2xl border-2 overflow-hidden
+                  transition-all duration-300 cursor-pointer
+                  ${isTechnical
+                    ? 'bg-gradient-to-br from-blue-600/95 to-purple-700/95 border-blue-400/40 text-white'
+                    : 'bg-gradient-to-br from-emerald-500/95 to-green-700/95 border-emerald-400/40 text-white'
+                  }
+                `}
           >
             {/* Animated Background Gradient */}
             <motion.div
@@ -106,9 +110,9 @@ const ProfileSwitcher = ({ onProfileChange, currentProfile }: ProfileSwitcherPro
                 transition={{ duration: 0.8 }}
               >
                 {isTechnical ? (
-                  <Code className="w-8 h-8" strokeWidth={2.5} />
+                  <Code className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
                 ) : (
-                  <PenTool className="w-8 h-8" strokeWidth={2.5} />
+                  <PenTool className="w-6 h-6 md:w-8 md:h-8" strokeWidth={2.5} />
                 )}
               </motion.div>
             </motion.div>
@@ -118,10 +122,10 @@ const ProfileSwitcher = ({ onProfileChange, currentProfile }: ProfileSwitcherPro
               className="relative z-10 flex flex-col gap-0.5"
               style={{ transform: 'translateZ(20px)' }}
             >
-              <span className="font-bold text-xl tracking-wide">
+              <span className="font-bold text-sm md:text-xl tracking-wide">
                 {isTechnical ? 'Technical' : 'Copywriting'}
               </span>
-              <span className="text-xs opacity-80 font-medium">
+              <span className="text-xs md:text-xs opacity-80 font-medium">
                 {isTechnical ? 'AI & Development' : 'Marketing & Content'}
               </span>
             </motion.div>
@@ -255,6 +259,18 @@ const ProfileSwitcher = ({ onProfileChange, currentProfile }: ProfileSwitcherPro
             </>
           )}
         </AnimatePresence>
+        {/* Small fallback circular button for mobile (always visible on small screens) */}
+        <div className="md:hidden fixed bottom-6 right-6 z-[80]">
+          <motion.button
+            onClick={handleSwitch}
+            aria-label="Switch profile"
+            animate={{ scale: [1, 1.08, 1], boxShadow: ["0 0 0 rgba(0,0,0,0)", "0 0 18px rgba(59,130,246,0.32)", "0 0 0 rgba(0,0,0,0)"] }}
+            transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 0.6, ease: "easeInOut" }}
+            className="w-12 h-12 rounded-full shadow-lg flex items-center justify-center bg-primary text-white"
+          >
+            {isTechnical ? <Code className="w-5 h-5" strokeWidth={2} /> : <PenTool className="w-5 h-5" strokeWidth={2} />}
+          </motion.button>
+        </div>
       </div>
     </div>
   );
