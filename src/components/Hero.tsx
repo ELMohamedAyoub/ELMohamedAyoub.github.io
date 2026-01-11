@@ -43,7 +43,7 @@ const Hero = ({ currentProfile }: HeroProps) => {
   }, [currentIndex, roles]);
 
   const taglineText = currentProfile === 'technical' 
-    ? "Building intelligent healthcare systems with IoT, ML & Big Data"
+    ? "Consulting + Engineering + Data Science — delivering AI systems that solve real business problems across industries"
     : "Transforming complex technology into compelling stories that convert";
 
   return (

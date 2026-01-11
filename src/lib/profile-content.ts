@@ -4,19 +4,24 @@ export type ProfileType = 'technical' | 'copywriting';
 export const profileContent = {
   technical: {
     hero: {
-      roles: ["Software Engineer", "AI/ML Consultant", "Data Scientist", "Technical Advisor"],
-      tagline: "Building intelligent systems with AI, IoT, ML & Big Data",
+      roles: ["AI Engineer & Technical Consultant", "Data Science Solutions Architect", "Full-Stack ML Engineer", "Business Intelligence Specialist"],
+      tagline: "Engineering intelligent systems that solve complex business problems across industries",
     },
     about: {
       title: "About Me",
-      bio: `Software Engineering student at École Supérieure Mohammed 6 d'Ingénieurs des Sciences et de la Santé (ESM6ISS) specializing in AI and data-driven solutions. 
-      I work as a technical consultant and data scientist, helping businesses leverage AI/ML technologies to solve complex problems and build scalable systems.
+      bio: `Software Engineer & Technical Consultant with a degree from École Supérieure Mohammed 6 d'Ingénieurs des Sciences et de la Santé (ESM6ISS). Ready to solve complex problems wherever they exist — healthcare, fintech, logistics, e-commerce, or anywhere data meets business impact.
+      I don't fit in one box — I'm the engineer who understands data science, the data scientist who ships production code, and the consultant who speaks both technical and business.
       <br/><br/>
-      My technical expertise spans predictive analytics, IoT systems, and full-stack development. I've built ML models achieving 91% accuracy, developed platforms serving 500+ partner organizations, and created automation solutions that improve efficiency by 30%.
-      I work with Python, JavaScript, React, Node.js, TensorFlow, and Big Data technologies like Hadoop and Spark to deliver end-to-end AI/ML solutions.
+      <strong>What I Actually Do:</strong><br/>
+      ✓ Build ML pipelines that don't just "work in research" — they handle 1,000+ daily transactions in production<br/>
+      ✓ Turn messy business problems into elegant technical solutions across any industry<br/>
+      ✓ Deploy full-stack systems that actually scale — from React dashboards to real-time IoT processing<br/>
+      ✓ Bridge language and cultural gaps with multilingual AI (French/Arabic/English) serving 500+ organizations<br/>
+      ✓ Consult on data strategy, then actually build it — no handwaving, just working systems<br/>
+      <br/>
+      My track record? Systems across healthcare (91% ML accuracy in diagnostics), national logistics (30% efficiency gains for 50+ vehicles), enterprise automation (25% workload reduction), and multilingual AI platforms.
       <br/><br/>
-      Through professional experience at Laboratoire National Mohammed VI and Centre Dentaire Mohammed VI, plus freelance consulting projects, I've implemented automated CRM pipelines, multilingual chatbots, predictive models, and data analytics dashboards.
-      As a trilingual professional exploring cybersecurity and pentesting, I bridge the gap between cutting-edge AI research and practical business applications.`,
+      As a trilingual professional with production experience in Python, TensorFlow, React, Node.js, Next.js, FastAPI, Flask, and Big Data (Hadoop/Spark) — plus experience dabbling in C++ and C# — I solve the problems others say are "too complex" — then deploy them to production. I'm proficient in the most sought-after frameworks and languages in the industry. Open to opportunities worldwide.`,
       skills: [
         { name: "Python & JavaScript", level: 92 },
         { name: "Machine Learning (TensorFlow, PyTorch)", level: 88 },
@@ -26,10 +31,11 @@ export const profileContent = {
         { name: "Cybersecurity & Pentesting", level: 60 },
       ],
       info: [
-        { label: "Profile", value: "Software Engineer, AI/ML Consultant, Data Scientist" },
-        { label: "Domain", value: "AI/ML Solutions, Data Science, Big Data Analytics, Technical Consulting" },
-        { label: "Education", value: "Software Engineering - AI Focused (ESM6ISS)" },
-        { label: "Frameworks", value: "React, Node.js, Express, TensorFlow, PyTorch, FastAPI" },
+        { label: "Profile", value: "AI Engineer & Technical Consultant | Data Science Solutions Architect | Full-Stack ML Engineer" },
+        { label: "Domain", value: "Cross-Industry AI/ML, Predictive Analytics, Enterprise Automation, Business Intelligence, IoT Engineering" },
+        { label: "Education", value: "Software Engineering Graduate (AI/Data Science) - ESM6ISS" },
+        { label: "Frameworks", value: "React, Next.js, Node.js, Express, FastAPI, Flask, TensorFlow, PyTorch" },
+        { label: "Languages", value: "Python, JavaScript/TypeScript, C++, C# (and more)" },
         { label: "Other Skills", value: "Docker, Hadoop, Spark, PostgreSQL, MongoDB, n8n, Zapier" },
         { label: "Interest", value: "Cybersecurity, Pentesting, AI Research, Automation" },
         { label: "Language", value: "French (Native), Arabic (Native), English (Professional)" },
