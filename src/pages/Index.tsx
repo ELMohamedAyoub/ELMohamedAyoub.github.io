@@ -18,9 +18,9 @@ const CONTACT_EMAIL = "ayubmousati@gmail.com";
 const CALENDLY_URL = "https://calendly.com/ayubmousati/30min";
 const PHONE = "[removed]";
 const LEAD_MAGNET_URL = "/guide-5-workflows.html";
-// Paste your free access key from web3forms.com to capture emails to your
-// inbox. Until then the guide is still delivered — it just isn't captured.
-const WEB3FORMS_ACCESS_KEY = "";
+// Web3Forms access key — public by design (it only permits submissions that
+// email the configured inbox). Lead-magnet emails are delivered here.
+const WEB3FORMS_ACCESS_KEY = "ec8fec88-eab3-41ab-842e-bd4779c9074a";
 
 const proof = [
   { value: "60%", label: "less manual prospecting time" },
