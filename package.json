@@ -1,9 +1,9 @@
 {
-  "homepage": "https://ELMohamedAyoub.github.io/MohamedAyoub",
+  "homepage": "https://elmousatimohamedayoub.me",
   "name": "portfolio-elmousati-mohamed-ayoub",
   "private": true,
   "version": "1.0.0",
-  "description": "Professional portfolio showcasing dual expertise in AI/ML Engineering and Digital Marketing",
+  "description": "AI engineering portfolio focused on agentic systems, automation, and full-stack products",
   "author": "ELMOUSATI Mohamed Ayoub <ayubmousati@gmail.com>",
   "type": "module",
   "scripts": {
