@@ -1,4 +1,4 @@
-import { FormEvent, ReactNode, useState } from "react";
+import { FormEvent, MouseEvent, ReactNode, useRef, useState } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import {
   ArrowDown,
@@ -10,6 +10,8 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import { Magnetic } from "@/components/Magnetic";
+import { CountUp } from "@/components/CountUp";
 
 const CONTACT_EMAIL = "ayubmousati@gmail.com";
 const CALENDLY_URL = "https://calendly.com/ayubmousati/30min";
@@ -19,7 +21,6 @@ const proof = [
   { value: "60%", label: "less manual prospecting time" },
   { value: "40%", label: "better pipeline follow-up" },
   { value: "30%", label: "better resource utilisation" },
-  { value: "91%", label: "cardiac risk model accuracy" },
 ];
 
 const services = [
@@ -119,6 +120,45 @@ const moreWork = [
   },
 ];
 
+const websites = [
+  {
+    domain: "pressingaoo.vercel.app",
+    href: "https://pressingaoo.vercel.app/",
+    eyebrow: "Service business · Montreal",
+    title: "CleanPro Mobile",
+    description:
+      "On-demand car and home cleaning. Booking in under a minute, Stripe payments, subscriptions, and gift cards — bilingual.",
+    tags: ["Booking", "Stripe", "FR / EN"],
+  },
+  {
+    domain: "marketplace-umber-two.vercel.app",
+    href: "https://marketplace-umber-two.vercel.app/",
+    eyebrow: "E-commerce · Casablanca",
+    title: "Lahlou Home Company",
+    description:
+      "Appliance marketplace for a 40-year-old retailer. 80+ products across 13 categories with next-day delivery.",
+    tags: ["E-commerce", "Catalog", "Brand"],
+  },
+  {
+    domain: "madmadi-crm.vercel.app",
+    href: "https://madmadi-crm.vercel.app/",
+    eyebrow: "Car rental · Morocco",
+    title: "Madmadi Coches",
+    description:
+      "Airport-to-city car rental with instant WhatsApp booking, live pricing, and an admin panel behind the fleet.",
+    tags: ["Booking", "WhatsApp", "Admin"],
+  },
+  {
+    domain: "smart-form-c.vercel.app",
+    href: "https://smart-form-c.vercel.app/",
+    eyebrow: "SaaS platform · Quebec",
+    title: "PULSE",
+    description:
+      "Workplace well-being platform: a survey engine, anonymised response collection, and live dashboards for Loi 27 compliance.",
+    tags: ["Platform", "Dashboards", "Surveys"],
+  },
+];
+
 const experience = [
   {
     date: "Feb 2026 · Apr 2026",
@@ -215,8 +255,8 @@ const tickerItems = [
 ];
 
 const reveal = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: 26, filter: "blur(6px)" },
+  visible: { opacity: 1, y: 0, filter: "blur(0px)" },
 };
 
 interface RevealProps {
@@ -235,7 +275,7 @@ const Reveal = ({ children, className, delay = 0 }: RevealProps) => {
       initial={reduceMotion ? undefined : "hidden"}
       whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.72, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
     </motion.div>
@@ -260,12 +300,15 @@ const Navigation = () => {
         <div className="nav-links">
           <a href="#services">Services</a>
           <a href="#work">Work</a>
+          <a href="#websites">Websites</a>
           <a href="#experience">Experience</a>
           <a href="#about">About</a>
         </div>
-        <a className="nav-contact" href="#contact">
-          Start a project
-        </a>
+        <Magnetic strength={0.4}>
+          <a className="nav-contact" href="#contact">
+            Start a project
+          </a>
+        </Magnetic>
       </div>
     </motion.nav>
   );
@@ -273,6 +316,7 @@ const Navigation = () => {
 
 const Hero = () => {
   const reduceMotion = useReducedMotion();
+  const heroRef = useRef<HTMLElement>(null);
   const lineProps = (delay: number) =>
     reduceMotion
       ? {}
@@ -282,8 +326,18 @@ const Hero = () => {
           transition: { duration: 1, delay, ease: [0.16, 1, 0.3, 1] },
         };
 
+  const handlePointer = (event: MouseEvent<HTMLElement>) => {
+    if (reduceMotion) return;
+    const el = heroRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty("--gx", `${((event.clientX - rect.left) / rect.width) * 100}%`);
+    el.style.setProperty("--gy", `${((event.clientY - rect.top) / rect.height) * 100}%`);
+  };
+
   return (
-    <header id="top" className="hero">
+    <header id="top" className="hero" ref={heroRef} onMouseMove={handlePointer}>
+      <div className="hero-glow" aria-hidden="true" />
       <div className="shell">
         <motion.div
           className="hero-eyebrow"
@@ -319,22 +373,27 @@ const Hero = () => {
           <p>
             I help sales and operations teams hand off their repetitive work —
             the follow-ups, the data entry, the checks — to AI agents that
-            actually do it. One team cut prospecting time by 60%.
+            actually do it. So your best people stop being the glue between your
+            tools.
           </p>
           <div className="hero-actions">
-            <a
-              className="button button-dark"
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Calendar aria-hidden="true" />
-              Book a free workflow teardown
-            </a>
-            <a className="button button-light" href="#work">
-              See what I've built
-              <ArrowDown aria-hidden="true" />
-            </a>
+            <Magnetic>
+              <a
+                className="button button-dark"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Calendar aria-hidden="true" />
+                Book a free workflow teardown
+              </a>
+            </Magnetic>
+            <Magnetic>
+              <a className="button button-light" href="#work">
+                See what I've built
+                <ArrowDown aria-hidden="true" />
+              </a>
+            </Magnetic>
           </div>
         </motion.div>
 
@@ -348,7 +407,9 @@ const Hero = () => {
           <div className="proof-grid">
             {proof.map((item) => (
               <div className="proof-item" key={item.label}>
-                <strong>{item.value}</strong>
+                <strong>
+                  <CountUp value={item.value} />
+                </strong>
                 <span>{item.label}</span>
               </div>
             ))}
@@ -561,6 +622,53 @@ const Work = () => (
   </section>
 );
 
+const Websites = () => (
+  <section id="websites" className="websites section">
+    <div className="shell">
+      <SectionHeading
+        eyebrow="Live websites"
+        title="Sites I have built and shipped."
+        copy="Booking systems, e-commerce, and a full platform — live in production for real businesses across Morocco and Canada."
+      />
+      <div className="site-grid">
+        {websites.map((site, index) => (
+          <Reveal className="site-card-wrap" delay={index * 0.06} key={site.href}>
+            <a
+              className="site-card"
+              href={site.href}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="site-bar" aria-hidden="true">
+                <span className="site-dots">
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                <em>{site.domain}</em>
+              </div>
+              <div className="site-body">
+                <p className="eyebrow accent">{site.eyebrow}</p>
+                <h3>{site.title}</h3>
+                <p>{site.description}</p>
+                <div className="tag-list">
+                  {site.tags.map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <span className="site-visit">
+                Visit live
+                <ArrowUpRight aria-hidden="true" />
+              </span>
+            </a>
+          </Reveal>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
 const Experience = () => (
   <section id="experience" className="experience section">
     <div className="shell">
@@ -712,15 +820,17 @@ const Contact = () => {
               lose time. Thirty minutes is enough to work out whether there is a
               useful first build.
             </p>
-            <a
-              className="button button-dark"
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Calendar aria-hidden="true" />
-              Book 30 minutes
-            </a>
+            <Magnetic>
+              <a
+                className="button button-dark"
+                href={CALENDLY_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Calendar aria-hidden="true" />
+                Book 30 minutes
+              </a>
+            </Magnetic>
             <div className="contact-links">
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               <a href={`tel:${PHONE.replace(/\s/g, "")}`}>{PHONE}</a>
@@ -821,12 +931,14 @@ const Footer = () => (
 
 const Index = () => (
   <div className="portfolio">
+    <div className="grain" aria-hidden="true" />
     <Navigation />
     <main>
       <Hero />
       <Ticker />
       <Services />
       <Work />
+      <Websites />
       <Experience />
       <Process />
       <About />
