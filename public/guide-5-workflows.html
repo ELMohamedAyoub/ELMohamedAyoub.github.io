@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The 5 Workflows to Automate First — Mohamed Ayoub El Mousati</title>
+    <meta
+      name="description"
+      content="A 2-minute playbook: the five workflows every sales and ops team should hand off to AI first, in what order, and the trap that wastes the first month."
+    />
+    <style>
+      :root {
+        --parchment: #f5f0e8;
+        --espresso: #1c1612;
+        --celadon: #7ba99a;
+        --line: rgba(28, 22, 18, 0.12);
+        --muted: rgba(28, 22, 18, 0.66);
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--parchment);
+        color: var(--espresso);
+        font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 760px; margin: 0 auto; padding: 64px 28px 96px; }
+      .eyebrow {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--celadon);
+        font-weight: 700;
+        margin: 0 0 16px;
+      }
+      h1 {
+        font-size: clamp(2rem, 1.2rem + 3.5vw, 3.2rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        margin: 0 0 18px;
+      }
+      .lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 8px; max-width: 60ch; }
+      .rule { height: 1px; background: var(--line); margin: 40px 0; border: 0; }
+      .step { margin: 0 0 36px; }
+      .step-num {
+        font-size: 12px;
+        letter-spacing: 0.1em;
+        color: var(--celadon);
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .step h2 {
+        font-size: 1.4rem;
+        letter-spacing: -0.01em;
+        margin: 8px 0 10px;
+      }
+      .step p { margin: 0 0 10px; }
+      .label {
+        font-weight: 700;
+        color: var(--espresso);
+      }
+      .trap {
+        border-left: 2px solid var(--celadon);
+        padding: 4px 0 4px 16px;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+      .cta {
+        margin-top: 48px;
+        padding: 32px;
+        border: 1px solid var(--espresso);
+        background: var(--espresso);
+        color: var(--parchment);
+      }
+      .cta h2 { margin: 0 0 10px; font-size: 1.5rem; }
+      .cta p { margin: 0 0 20px; color: rgba(245, 240, 232, 0.78); }
+      .button {
+        display: inline-block;
+        padding: 14px 26px;
+        background: var(--parchment);
+        color: var(--espresso);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      footer {
+        margin-top: 56px;
+        padding-top: 24px;
+        border-top: 1px solid var(--line);
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+      footer a { color: var(--espresso); }
+      @media print { .cta { background: #fff; color: #000; border-color: #000; } .button { border: 1px solid #000; } }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <p class="eyebrow">A 2-minute playbook · Mohamed Ayoub El Mousati</p>
+      <h1>The 5 workflows to automate first.</h1>
+      <p class="lede">
+        Most teams try to automate everything at once and finish nothing. Here is
+        the order I actually use with sales and ops teams — what to hand off
+        first, why, and the trap that quietly eats the first month.
+      </p>
+
+      <hr class="rule" />
+
+      <section class="step">
+        <p class="step-num">01</p>
+        <h2>Lead capture &amp; CRM enrichment</h2>
+        <p>
+          <span class="label">The bleed:</span> a person retypes form fills,
+          business cards, and inbox replies into the CRM, then googles the company
+          to fill the blanks.
+        </p>
+        <p>
+          <span class="label">Hand off:</span> auto-create and enrich the record
+          the moment a lead arrives — company, size, role, source — so a human
+          never opens a blank form again.
+        </p>
+        <p class="trap">
+          Trap: don't let the agent write to your CRM unsupervised on day one.
+          Stage it, show the diff, approve, then loosen the leash.
+        </p>
+      </section>
+
+      <section class="step">
+        <p class="step-num">02</p>
+        <h2>Follow-up &amp; stalled-deal surfacing</h2>
+        <p>
+          <span class="label">The bleed:</span> deals die in silence because
+          nobody remembers who went cold or what to say next.
+        </p>
+        <p>
+          <span class="label">Hand off:</span> an agent watches the pipeline,
+          surfaces the deal that's stuck and why, and drafts the next message. The
+          rep reviews and sends.
+        </p>
+        <p class="trap">
+          Trap: automating the send before the draft is trusted. Get the drafts
+          good first — sending is the last switch you flip.
+        </p>
+      </section>
+
+      <section class="step">
+        <p class="step-num">03</p>
+        <h2>Pre-call research briefs</h2>
+        <p>
+          <span class="label">The bleed:</span> reps spend 15–20 minutes before
+          each call digging through the site, LinkedIn, and past notes.
+        </p>
+        <p>
+          <span class="label">Hand off:</span> a one-page brief auto-compiled
+          before every meeting — context, recent activity, and the two questions
+          worth asking.
+        </p>
+        <p class="trap">
+          Trap: a brief nobody reads. Put it where the rep already looks (the
+          calendar invite or CRM), not in a new tool.
+        </p>
+      </section>
+
+      <section class="step">
+        <p class="step-num">04</p>
+        <h2>Quote / order / PO routing</h2>
+        <p>
+          <span class="label">The bleed:</span> a request is copy-pasted between
+          inbox, sheet, and ERP, and the pricing check happens too late.
+        </p>
+        <p>
+          <span class="label">Hand off:</span> one tracked flow from request to
+          approval, with the price and history check done up front and exceptions
+          raised before they become orders.
+        </p>
+        <p class="trap">
+          Trap: skipping the exception path. The value is in catching the weird
+          5%, not in the happy path that already works.
+        </p>
+      </section>
+
+      <section class="step">
+        <p class="step-num">05</p>
+        <h2>Inbox triage &amp; handoffs</h2>
+        <p>
+          <span class="label">The bleed:</span> a shared inbox where everything
+          looks urgent and replies get dropped or duplicated.
+        </p>
+        <p>
+          <span class="label">Hand off:</span> classify, route to the right owner,
+          and draft the reply — so people answer instead of sorting.
+        </p>
+        <p class="trap">
+          Trap: full auto-reply. Draft-and-approve keeps your voice and your
+          reputation while you build trust in it.
+        </p>
+      </section>
+
+      <div class="cta">
+        <h2>Want this mapped to your actual stack?</h2>
+        <p>
+          Show me the workflow your team hates most. In 30 minutes I'll tell you
+          which of these to automate first and what it would take — no pitch.
+        </p>
+        <a class="button" href="https://elmousatimohamedayoub.me/#contact"
+          >Book a free teardown →</a
+        >
+      </div>
+
+      <footer>
+        Mohamed Ayoub El Mousati · AI Engineer · Casablanca ·
+        <a href="https://elmousatimohamedayoub.me">elmousatimohamedayoub.me</a>
+      </footer>
+    </main>
+  </body>
+</html>

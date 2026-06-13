@@ -1358,6 +1358,112 @@ html.lenis body {
   transform: translate(3px, -3px);
 }
 
+/* Guarantee lines (risk reversal near CTAs) */
+.hero-guarantee,
+.guarantee-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 22px;
+  max-width: 54ch;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.guarantee-line {
+  margin-top: 18px;
+}
+.hero-guarantee svg,
+.guarantee-line svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  color: var(--celadon);
+}
+
+/* Lead magnet */
+.lead-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 48px;
+  align-items: center;
+  padding: 52px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.lead-copy h2 {
+  margin: 14px 0;
+}
+.lead-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 46ch;
+}
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.lead-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.lead-form label span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--soft);
+}
+.lead-form input[type="email"] {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid var(--line);
+  background: var(--parchment);
+  color: var(--espresso);
+  font: inherit;
+}
+.lead-form input[type="email"]:focus-visible {
+  outline: 2px solid var(--celadon);
+  outline-offset: 2px;
+}
+.lead-form .button {
+  width: 100%;
+}
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+.lead-fineprint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--soft);
+}
+.lead-success {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.lead-success svg {
+  width: 26px;
+  height: 26px;
+  color: var(--celadon);
+}
+.lead-success h3 {
+  margin: 0;
+}
+.lead-success > p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 42ch;
+}
+
 @media (max-width: 1000px) {
   .shell {
     width: min(100% - 48px, 1200px);
@@ -1720,5 +1826,11 @@ html.lenis body {
 @media (max-width: 760px) {
   .site-grid {
     grid-template-columns: 1fr;
+  }
+
+  .lead-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 28px;
   }
 }

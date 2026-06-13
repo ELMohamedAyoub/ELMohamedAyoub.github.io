@@ -9,6 +9,7 @@ import {
   Mail,
   MapPin,
   Phone,
+  ShieldCheck,
 } from "lucide-react";
 import { Magnetic } from "@/components/Magnetic";
 import { CountUp } from "@/components/CountUp";
@@ -16,6 +17,10 @@ import { CountUp } from "@/components/CountUp";
 const CONTACT_EMAIL = "ayubmousati@gmail.com";
 const CALENDLY_URL = "https://calendly.com/ayubmousati/30min";
 const PHONE = "[removed]";
+const LEAD_MAGNET_URL = "/guide-5-workflows.html";
+// Paste your free access key from web3forms.com to capture emails to your
+// inbox. Until then the guide is still delivered — it just isn't captured.
+const WEB3FORMS_ACCESS_KEY = "";
 
 const proof = [
   { value: "60%", label: "less manual prospecting time" },
@@ -395,6 +400,11 @@ const Hero = () => {
               </a>
             </Magnetic>
           </div>
+          <p className="hero-guarantee">
+            <ShieldCheck aria-hidden="true" />
+            Free, 30 minutes, no pitch. You leave with a plan to automate your
+            first workflow — whether we work together or not.
+          </p>
         </motion.div>
 
         <motion.div
@@ -498,6 +508,11 @@ const Services = () => (
           Describe the work, not the technology
           <ArrowUpRight aria-hidden="true" />
         </a>
+        <p className="guarantee-line">
+          <ShieldCheck aria-hidden="true" />
+          If the first build doesn't do the job we scope together, you don't pay
+          for it.
+        </p>
       </Reveal>
     </div>
   </section>
@@ -784,6 +799,118 @@ const Faq = () => (
   </section>
 );
 
+const LeadMagnet = () => {
+  const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
+  const [captureWarning, setCaptureWarning] = useState(false);
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const email = String(data.get("email") ?? "").trim();
+    // Honeypot: real users never fill this hidden field.
+    if (String(data.get("company_website") ?? "").trim()) return;
+    if (!email) return;
+
+    if (!WEB3FORMS_ACCESS_KEY) {
+      setStatus("done");
+      return;
+    }
+
+    setStatus("loading");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: "New playbook download",
+          from_name: "Portfolio · lead magnet",
+          email,
+        }),
+      });
+      const result = (await response.json()) as { success?: boolean };
+      if (!result.success) throw new Error("Web3Forms rejected the submission");
+    } catch {
+      // Don't trap the visitor — still deliver the guide, but surface that the
+      // capture didn't go through so they can reach out directly if they want.
+      setCaptureWarning(true);
+    }
+    setStatus("done");
+  };
+
+  return (
+    <section id="guide" className="lead-magnet section">
+      <div className="shell lead-grid">
+        <Reveal className="lead-copy">
+          <p className="eyebrow accent">Free resource</p>
+          <h2>Not ready to talk? Steal the playbook.</h2>
+          <p>
+            The five workflows I automate first for almost every sales and ops
+            team — what to hand off, in what order, and the trap that wastes the
+            first month. A two-minute read.
+          </p>
+        </Reveal>
+
+        <Reveal className="lead-form-wrap" delay={0.1}>
+          {status === "done" ? (
+            <div className="lead-success" role="status">
+              <ShieldCheck aria-hidden="true" />
+              <h3>It's yours.</h3>
+              <p>
+                {captureWarning
+                  ? "Couldn't confirm your email just now — grab your copy here, and email me if you want the follow-ups."
+                  : WEB3FORMS_ACCESS_KEY
+                    ? "Sent. Grab your copy now while you're here:"
+                    : "Here's your copy — open it now:"}
+              </p>
+              <Magnetic>
+                <a
+                  className="button button-dark"
+                  href={LEAD_MAGNET_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Open the playbook
+                  <ArrowUpRight aria-hidden="true" />
+                </a>
+              </Magnetic>
+            </div>
+          ) : (
+            <form className="lead-form" onSubmit={handleSubmit}>
+              <label>
+                <span>Where should I send it?</span>
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="you@company.com"
+                  required
+                />
+              </label>
+              <input
+                type="text"
+                name="company_website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="honeypot"
+              />
+              <button
+                className="button button-dark"
+                type="submit"
+                disabled={status === "loading"}
+              >
+                {status === "loading" ? "Sending…" : "Send me the playbook"}
+                <ArrowRight aria-hidden="true" />
+              </button>
+              <p className="lead-fineprint">No spam. One email with the guide, that's it.</p>
+            </form>
+          )}
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
@@ -831,6 +958,11 @@ const Contact = () => {
                 Book 30 minutes
               </a>
             </Magnetic>
+            <p className="guarantee-line">
+              <ShieldCheck aria-hidden="true" />
+              My guarantee: if the first build doesn't do the job we scope
+              together, you don't pay for it.
+            </p>
             <div className="contact-links">
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
               <a href={`tel:${PHONE.replace(/\s/g, "")}`}>{PHONE}</a>
@@ -943,6 +1075,7 @@ const Index = () => (
       <Process />
       <About />
       <Faq />
+      <LeadMagnet />
       <Contact />
     </main>
     <Footer />
