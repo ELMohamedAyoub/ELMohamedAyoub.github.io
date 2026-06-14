@@ -315,7 +315,7 @@ const Navigation = () => {
           <a href="#about">About</a>
         </div>
         <Magnetic strength={0.4} className="nav-contact-magnetic">
-          <a className="nav-contact" href="#contact">
+          <a className="nav-contact button-cta" href="#contact">
             Start a project
           </a>
         </Magnetic>
@@ -389,7 +389,7 @@ const Hero = () => {
           <div className="hero-actions">
             <Magnetic>
               <a
-                className="button button-dark"
+                className="button button-dark button-cta"
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noreferrer"
@@ -954,7 +954,7 @@ const Contact = () => {
             </p>
             <Magnetic>
               <a
-                className="button button-dark"
+                className="button button-dark button-cta"
                 href={CALENDLY_URL}
                 target="_blank"
                 rel="noreferrer"
