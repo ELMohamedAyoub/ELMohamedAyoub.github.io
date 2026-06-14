@@ -131,6 +131,11 @@ a {
   color: var(--espresso);
 }
 
+/* The Magnetic wrapper is the grid item, so it carries the end-alignment. */
+.nav-contact-magnetic {
+  justify-self: end;
+}
+
 .nav-contact {
   justify-self: end;
   padding: 11px 20px;

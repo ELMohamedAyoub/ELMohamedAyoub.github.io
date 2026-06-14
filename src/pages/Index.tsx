@@ -314,7 +314,7 @@ const Navigation = () => {
           <a href="#experience">Experience</a>
           <a href="#about">About</a>
         </div>
-        <Magnetic strength={0.4}>
+        <Magnetic strength={0.4} className="nav-contact-magnetic">
           <a className="nav-contact" href="#contact">
             Start a project
           </a>
