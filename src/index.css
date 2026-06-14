@@ -1274,6 +1274,77 @@ html.lenis body {
   transform: translateX(130%) skewX(-12deg);
 }
 
+/* Button liveliness: lift + trailing-icon nudge + light-fill */
+.button {
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.4s ease;
+}
+.button svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.button:hover {
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: translateY(0);
+}
+.button-dark:hover {
+  box-shadow: 0 16px 30px -16px rgba(28, 22, 18, 0.7);
+}
+.button-light:hover {
+  background: var(--espresso);
+  color: var(--parchment);
+}
+.button:hover svg:last-child {
+  transform: translateX(4px);
+}
+.button:hover svg:first-child:not(:last-child) {
+  transform: translateX(-2px);
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  transform-origin: 0 50%;
+  background: var(--celadon);
+  z-index: 10000;
+}
+
+/* Live "available now" pulse */
+.status-dot {
+  animation: status-pulse 2.4s ease-in-out infinite;
+}
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(123, 169, 154, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(123, 169, 154, 0);
+  }
+}
+
+/* Card hover life */
+.more-work-card {
+  transition:
+    transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    background 180ms ease,
+    box-shadow 0.45s ease;
+}
+.more-work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 44px -28px rgba(28, 22, 18, 0.45);
+}
+
 /* Live websites */
 .site-grid {
   display: grid;

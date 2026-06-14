@@ -1,5 +1,5 @@
 import { FormEvent, MouseEvent, ReactNode, useRef, useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import {
   ArrowDown,
   ArrowRight,
@@ -23,9 +23,9 @@ const LEAD_MAGNET_URL = "/guide-5-workflows.html";
 const WEB3FORMS_ACCESS_KEY = "ec8fec88-eab3-41ab-842e-bd4779c9074a";
 
 const proof = [
-  { value: "60%", label: "less manual prospecting time" },
+  { value: "60%", label: "less time spent prospecting" },
   { value: "40%", label: "better pipeline follow-up" },
-  { value: "30%", label: "better resource utilisation" },
+  { value: "30%", label: "more output, same headcount" },
 ];
 
 const services = [
@@ -231,6 +231,11 @@ const faqs = [
       "Yes. I have worked with Salesforce, Odoo, n8n, Zapier, PostgreSQL, MongoDB, REST APIs, and custom services. I would rather fit the system into your operation than force a new stack on the team.",
   },
   {
+    question: "What does it cost?",
+    answer:
+      "I price each build after I understand the work — not from a menu. The first call is free and tells you whether there's a fast, worthwhile first build before any money is on the table. Most clients start with one narrow, high-value workflow instead of a big bang.",
+  },
+  {
     question: "What does a first engagement look like?",
     answer:
       "We spend 30 minutes on the workflow. If there is a good fit, I send back a short scope with the first useful release, the systems involved, what I need from you, and the delivery plan.",
@@ -413,7 +418,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.78 }}
         >
-          <p className="eyebrow">Selected outcomes</p>
+          <p className="eyebrow">Results so far</p>
           <div className="proof-grid">
             {proof.map((item) => (
               <div className="proof-item" key={item.label}>
@@ -537,7 +542,7 @@ const Work = () => (
     <div className="shell">
       <SectionHeading
         eyebrow="Selected systems"
-        title="A few things I have already shipped."
+        title="Systems already doing the work."
         copy="Private client work is shown as a system map. Public products link to their source."
       />
 
@@ -642,8 +647,8 @@ const Websites = () => (
     <div className="shell">
       <SectionHeading
         eyebrow="Live websites"
-        title="Sites I have built and shipped."
-        copy="Booking systems, e-commerce, and a full platform — live in production for real businesses across Morocco and Canada."
+        title="Built to book and sell — live right now."
+        copy="Booking systems, e-commerce, and a full platform — in production for real businesses across Morocco and Canada. Click any one."
       />
       <div className="site-grid">
         {websites.map((site, index) => (
@@ -782,7 +787,7 @@ const Faq = () => (
     <div className="shell faq-grid">
       <Reveal className="faq-heading">
         <p className="eyebrow">Before we talk</p>
-        <h2>Useful answers.</h2>
+        <h2>Answers before you ask.</h2>
       </Reveal>
       <Reveal className="faq-list" delay={0.08}>
         {faqs.map((item) => (
@@ -1061,9 +1066,22 @@ const Footer = () => (
   </footer>
 );
 
+const ScrollProgress = () => {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    mass: 0.3,
+  });
+  return (
+    <motion.div className="scroll-progress" style={{ scaleX }} aria-hidden="true" />
+  );
+};
+
 const Index = () => (
   <div className="portfolio">
     <div className="grain" aria-hidden="true" />
+    <ScrollProgress />
     <Navigation />
     <main>
       <Hero />
