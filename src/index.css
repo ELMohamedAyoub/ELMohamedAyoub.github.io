@@ -274,7 +274,7 @@ a {
 }
 
 .flip:hover .whirl {
-  animation-duration: 6s;
+  animation-play-state: paused;
 }
 
 .portrait-disc {
@@ -786,19 +786,5 @@ main + .divider {
   }
   .prose {
     font-size: 1.15rem;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
   }
 }
