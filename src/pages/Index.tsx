@@ -8,7 +8,6 @@ import {
   Check,
   Mail,
   MapPin,
-  Phone,
   ShieldCheck,
 } from "lucide-react";
 import { Magnetic } from "@/components/Magnetic";
@@ -16,7 +15,6 @@ import { CountUp } from "@/components/CountUp";
 
 const CONTACT_EMAIL = "ayubmousati@gmail.com";
 const CALENDLY_URL = "https://calendly.com/ayubmousati/30min";
-const PHONE = "[removed]";
 const LEAD_MAGNET_URL = "/guide-5-workflows.html";
 // Web3Forms access key — public by design (it only permits submissions that
 // email the configured inbox). Lead-magnet emails are delivered here.
@@ -768,10 +766,6 @@ const About = () => (
             <MapPin aria-hidden="true" />
             Casablanca · Remote
           </span>
-          <a href={`tel:${PHONE.replace(/\s/g, "")}`}>
-            <Phone aria-hidden="true" />
-            {PHONE}
-          </a>
           <a href={`mailto:${CONTACT_EMAIL}`}>
             <Mail aria-hidden="true" />
             {CONTACT_EMAIL}
@@ -970,7 +964,6 @@ const Contact = () => {
             </p>
             <div className="contact-links">
               <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
-              <a href={`tel:${PHONE.replace(/\s/g, "")}`}>{PHONE}</a>
               <a
                 href="https://www.linkedin.com/in/elmohamedayoub/"
                 target="_blank"
