@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useScrollReveal, scrollVariants } from "@/hooks/use-scroll-reveal";
-import { MapPin, Phone, Mail, Linkedin, Github } from "lucide-react";
+import { MapPin, Mail, Linkedin, Github } from "lucide-react";
 import { FaXTwitter } from "react-icons/fa6";
 import InteractiveElement from "@/components/InteractiveElement";
 
@@ -12,12 +12,6 @@ const Contact = () => {
       icon: MapPin,
       title: "Location",
       value: "Casablanca, Morocco",
-    },
-    {
-      icon: Phone,
-      title: "Phone",
-      value: "[removed]",
-      link: "tel:[removed]",
     },
     {
       icon: Mail,
