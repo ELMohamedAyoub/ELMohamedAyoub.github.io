@@ -10,7 +10,41 @@ export const LINKS = {
   github: "https://github.com/ELMohamedAyoub",
   linkedin: "https://www.linkedin.com/in/elmohamedayoub/",
   x: "https://twitter.com/ELMohamedAyoub",
+  guide: asset("guide-5-workflows.html"),
 };
+
+// The free pipeline review is the one offer the professional page sells.
+export const OFFER = {
+  cta: "Book a free pipeline review",
+  note: "Free for businesses looking to fix their pipeline.",
+  guarantee: "If the first build doesn't do the job we scope together, you don't pay.",
+};
+
+export const HERO = {
+  headline: "Win more of the leads you already get.",
+  pitch:
+    "I build AI systems that catch stalled deals, draft the follow-up and keep your pipeline moving. Your team reviews everything before it goes out.",
+  proof:
+    "One sales automation suite I worked on: about 60% less manual prospecting, about 40% better pipeline follow-up.",
+};
+
+// Ways to hire: freelance projects or ongoing agency-style work.
+export const SERVICES: { name: string; detail: string }[] = [
+  {
+    name: "Free pipeline review",
+    detail: "A 30-minute call. We find where sales are slipping and what to fix first. Free for businesses.",
+  },
+  {
+    name: "One workflow, built",
+    detail:
+      "A fixed-scope freelance project. I build the fix we agree on and hand it over working, covered by the guarantee.",
+  },
+  {
+    name: "Ongoing AI partner",
+    detail:
+      "Agency-style work for teams that want more than one system. I keep building, improving and running your AI workflows month to month.",
+  },
+];
 
 // Drop photos into /public and set the paths here, e.g. asset("me.jpg").
 // While null, the portrait shows a monogram.
@@ -33,16 +67,19 @@ export interface Inline {
 export const ABOUT: Record<Mode, Inline[][]> = {
   professional: [
     [
-      { text: "AI engineer in Casablanca. I build agent systems that take repetitive work off sales and operations teams." },
+      {
+        text: "Most businesses don't lose sales because they lack leads. They lose them when a reply comes late, a deal stalls or nobody follows up.",
+      },
     ],
     [
-      { text: "Recently I've built " },
-      { text: "a Salesforce co-agent that tells reps what to do next", href: "#work" },
-      { text: ", " },
-      { text: "a voice check-in that turns patient calls into clinical data", href: "https://github.com/ELMohamedAyoub/Your_AI_Doctor" },
-      { text: ", and " },
-      { text: "sites for businesses from Montreal to Casablanca", href: "#made" },
+      { text: "I'm Ayoub, an AI engineer in Casablanca. I find where that's happening in your business and " },
+      { text: "build the system that fixes it", href: "#work" },
       { text: "." },
+    ],
+    [
+      {
+        text: "Previously built software for Laboratoire National Mohammed VI and Centre Dentaire Mohammed VI.",
+      },
     ],
   ],
   personal: [
@@ -61,7 +98,7 @@ export interface CaseStudy {
 
 export const CASE_STUDIES: CaseStudy[] = [
   {
-    title: "A Salesforce co-agent that tells reps what to do next",
+    title: "Stalled deals, surfaced with the next message already drafted",
     area: "Sales ops",
     problem:
       "The blocker was not missing data. It was buried data. Reps had to inspect each opportunity, work out what was holding it up, then write the follow-up themselves.",
@@ -71,7 +108,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "The wider sales automation suite cut manual prospecting time by roughly 60% and improved pipeline follow-up by about 40%.",
   },
   {
-    title: "One procurement flow instead of four handoffs",
+    title: "Unusual pricing caught before the purchase order",
     area: "Procurement",
     problem:
       "Demand planning, supplier choice, purchase-order creation, and buyer notification lived as separate steps with pricing checks happening late.",
@@ -81,7 +118,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       "One traceable flow from demand to notification, with exceptions raised before they become purchase orders.",
   },
   {
-    title: "A voice check-in that becomes clinical data",
+    title: "Patient calls turned into records and alerts",
     area: "Healthcare",
     problem:
       "Post-surgery updates arrive as conversation. Care teams need pain scores, symptoms, emotional state, and alert conditions in a form they can scan.",
@@ -106,21 +143,21 @@ export interface Made {
 export const MADE: Made[] = [
   {
     title: "CleanPro Mobile",
-    description: "On-demand car and home cleaning in Montreal. Booking in under a minute, Stripe, subscriptions.",
+    description: "On-demand car and home cleaning in Montreal. Customers book and pay in under a minute, with subscriptions for repeat business.",
     image: asset("work/cleanpro.webp"),
     href: "https://pressingaoo.vercel.app/",
     badge: "Client",
   },
   {
     title: "Lahlou Home",
-    description: "Appliance marketplace for a 40-year-old Casablanca retailer. 80+ products, next-day delivery.",
+    description: "An online appliance marketplace for a 40-year-old Casablanca retailer: 80+ products, next-day delivery.",
     image: asset("work/lahlou.webp"),
     href: "https://marketplace-umber-two.vercel.app/",
     badge: "Client",
   },
   {
     title: "Madmadi Coches",
-    description: "Airport-to-city car rental with instant WhatsApp booking and an admin panel behind the fleet.",
+    description: "Airport car rental customers book instantly on WhatsApp, with an admin panel to run the fleet.",
     image: asset("work/madmadi.webp"),
     href: "https://madmadi-crm.vercel.app/",
     badge: "Client",
@@ -145,19 +182,6 @@ export const MADE: Made[] = [
     href: "https://github.com/ELMohamedAyoub/AI-Powered-Autism-Detection-Diagnosis-and-Therapy-App",
     badge: "Pilot",
   },
-];
-
-export interface Role {
-  role: string;
-  place: string;
-  date: string;
-}
-
-export const EXPERIENCE: Role[] = [
-  { role: "AI Engineer", place: "Remote contract", date: "2026" },
-  { role: "Software Developer", place: "Laboratoire National Mohammed VI", date: "2025" },
-  { role: "AI Developer & Automation Engineer", place: "Independent", date: "2025" },
-  { role: "Software Developer", place: "Centre Dentaire Mohammed VI", date: "2024" },
 ];
 
 // Personal mode. Placeholder lines, rewrite them in your own words.

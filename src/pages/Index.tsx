@@ -1,16 +1,17 @@
 import { useEffect } from "react";
-import { ABOUT, NAME } from "@/content/site";
+import { ABOUT, HERO, MADE, NAME } from "@/content/site";
 import { useMode } from "@/hooks/useMode";
 import { ModeToggle } from "@/components/illuminated/ModeToggle";
 import { Portrait } from "@/components/illuminated/Portrait";
 import { Compass, Divider } from "@/components/illuminated/Ornaments";
 import {
+  BookReview,
   Currently,
   Elsewhere,
-  ExperienceList,
   MadeGrid,
   Prose,
   Section,
+  Services,
   WorkList,
   WorkWithMe,
 } from "@/components/illuminated/Sections";
@@ -34,25 +35,30 @@ const useReveal = (key: string) => {
   }, [key]);
 };
 
+const CLIENT_WORK = MADE.filter((item) => item.badge === "Client");
+const OTHER_WORK = MADE.filter((item) => item.badge !== "Client");
+
 const Professional = () => (
   <>
     <Section title="About">
       <Prose paragraphs={ABOUT.professional} />
     </Section>
     <Divider />
-    <Section id="work" title="Selected Work">
+    <Section id="work" title="Results">
       <WorkList />
     </Section>
     <Compass />
-    <Section id="made" title="Stuff I've Made">
-      <MadeGrid />
+    <Section id="made" title="Built for clients">
+      <MadeGrid items={CLIENT_WORK} />
+      <h3 className="subhead">Also built</h3>
+      <MadeGrid items={OTHER_WORK} />
     </Section>
     <Divider />
-    <Section title="Experience">
-      <ExperienceList />
+    <Section id="hire" title="Ways to work together">
+      <Services />
     </Section>
     <Divider />
-    <Section title="Work With Me">
+    <Section id="review" title="Find the leak">
       <WorkWithMe />
     </Section>
   </>
@@ -85,15 +91,29 @@ const Index = () => {
           Home
         </a>
         <ModeToggle mode={mode} onToggle={toggle} />
-        <span className="topbar-spacer" aria-hidden="true" />
+        {mode === "professional" ? (
+          <a className="topbar-cta" href="#hire">
+            Hire me
+          </a>
+        ) : (
+          <span className="topbar-spacer" aria-hidden="true" />
+        )}
       </header>
 
       <main>
         <section className="hero">
           <Portrait mode={mode} onToggle={toggle} />
+          {mode === "professional" && <p className="hero-name swap-in">{NAME.professional}</p>}
           <h1 key={mode} className="name swap-in">
-            {NAME[mode]}
+            {mode === "professional" ? HERO.headline : NAME[mode]}
           </h1>
+          {mode === "professional" && (
+            <div className="hero-offer swap-in">
+              <p className="hero-pitch">{HERO.pitch}</p>
+              <BookReview />
+              <p className="hero-proof">{HERO.proof}</p>
+            </div>
+          )}
         </section>
 
         <div key={mode} className="mode-content swap-in">

@@ -2,9 +2,9 @@ import { ReactNode, useState } from "react";
 import {
   CASE_STUDIES,
   CURRENTLY,
-  EXPERIENCE,
   LINKS,
-  MADE,
+  OFFER,
+  SERVICES,
   type Inline,
   type Made,
 } from "@/content/site";
@@ -68,6 +68,7 @@ export const WorkList = () => {
               </span>
               <span className="row-plus" aria-hidden="true" />
             </button>
+            <p className="work-outcome">{study.outcome}</p>
             <div className="work-panel">
               <div className="work-panel-inner">
                 <dl className="work-detail">
@@ -75,8 +76,6 @@ export const WorkList = () => {
                   <dd>{study.problem}</dd>
                   <dt>Build</dt>
                   <dd>{study.build}</dd>
-                  <dt>Outcome</dt>
-                  <dd>{study.outcome}</dd>
                 </dl>
                 {study.href && <Lit href={study.href}>See the code →</Lit>}
               </div>
@@ -103,9 +102,9 @@ const Cover = ({ item, index }: { item: Made; index: number }) =>
     </div>
   );
 
-export const MadeGrid = () => (
+export const MadeGrid = ({ items }: { items: Made[] }) => (
   <div className="cards">
-    {MADE.map((item, i) => {
+    {items.map((item, i) => {
       const inner = (
         <>
           <Filigree />
@@ -132,18 +131,27 @@ export const MadeGrid = () => (
   </div>
 );
 
-export const ExperienceList = () => (
-  <ul className="rows">
-    {EXPERIENCE.map((job) => (
-      <li key={`${job.role}-${job.place}`} className="row">
-        <span className="row-main">
-          <span className="row-title">{job.role}</span>
-          <span className="row-meta">· {job.place}</span>
-        </span>
-        <span className="row-date">{job.date}</span>
-      </li>
-    ))}
-  </ul>
+export const BookReview = () => (
+  <div className="offer">
+    <a className="cta-button" href={LINKS.calendly} target="_blank" rel="noreferrer">
+      {OFFER.cta}
+    </a>
+    <p className="offer-note">{OFFER.note}</p>
+  </div>
+);
+
+export const Services = () => (
+  <div className="prose">
+    <ol className="services">
+      {SERVICES.map((service) => (
+        <li key={service.name}>
+          <h3 className="service-name">{service.name}</h3>
+          <p>{service.detail}</p>
+        </li>
+      ))}
+    </ol>
+    <BookReview />
+  </div>
 );
 
 export const Currently = () => (
@@ -162,12 +170,15 @@ export const Currently = () => (
 export const WorkWithMe = () => (
   <div className="prose">
     <p>
-      Open to project work, contract AI engineering, and full-time roles. The fastest way in is a
-      30-minute call about one workflow you want off your plate.
+      Bring me your pipeline. In 30 minutes, we'll find where sales are slipping and what to fix
+      first.
+    </p>
+    <p>{OFFER.guarantee}</p>
+    <BookReview />
+    <p>
+      Not ready for a call? <Lit href={LINKS.guide}>Read The 5 Workflows to Automate First</Lit>.
     </p>
     <p className="link-line">
-      <Lit href={LINKS.calendly}>Book a call</Lit>
-      <span className="dot">·</span>
       <Lit href={LINKS.email}>Email</Lit>
       <span className="dot">·</span>
       <Lit href={LINKS.linkedin}>LinkedIn</Lit>

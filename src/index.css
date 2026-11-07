@@ -318,6 +318,140 @@ a {
   letter-spacing: 0.02em;
   line-height: 1.1;
   text-align: center;
+  text-wrap: balance;
+  max-width: 24ch;
+}
+
+/* ── Offer (hero + Find the leak) ─────────────────────── */
+.hero-name {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: hsl(var(--gold));
+}
+
+.hero-offer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 36rem;
+  text-align: center;
+}
+
+.hero-pitch {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: hsl(var(--fg) / 0.88);
+}
+
+.hero-proof {
+  margin: 0;
+  font-size: 0.98rem;
+  font-style: italic;
+  color: hsl(var(--muted));
+}
+
+.offer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hero-offer .offer {
+  align-items: center;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background: hsl(var(--gold));
+  color: hsl(var(--bg));
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  box-shadow: 0 0 24px hsl(var(--gold) / 0.25);
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s ease;
+}
+
+.cta-button:hover,
+.cta-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px hsl(var(--gold) / 0.45);
+}
+
+.offer-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: hsl(var(--muted));
+}
+
+.topbar-cta {
+  justify-self: end;
+  padding: 0.45rem 1.1rem;
+  border: 1.5px solid hsl(var(--gold) / 0.7);
+  border-radius: 999px;
+  color: hsl(var(--gold));
+  font-weight: 600;
+  text-decoration: none;
+  opacity: 0;
+  animation: fadeDown 0.8s ease-out 0.3s forwards;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.topbar-cta:hover,
+.topbar-cta:focus-visible {
+  background: hsl(var(--gold));
+  color: hsl(var(--bg));
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services li {
+  padding-left: 1rem;
+  border-left: 1px solid hsl(var(--gold) / 0.4);
+}
+
+.services p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: hsl(var(--fg) / 0.85);
+}
+
+.service-name {
+  margin: 0 0 0.2rem;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: hsl(var(--gold));
+}
+
+.work-outcome {
+  margin: 0 0 0.6rem;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: hsl(var(--fg) / 0.8);
+}
+
+.subhead {
+  margin: 2rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: hsl(var(--muted));
 }
 
 /* ── Sections ─────────────────────────────────────────── */
@@ -445,14 +579,9 @@ a {
   line-height: 1.35;
 }
 
-.row-meta,
-.row-date {
+.row-meta {
   font-size: 0.85rem;
   color: hsl(var(--muted));
-}
-
-.row-date {
-  flex-shrink: 0;
 }
 
 .row-label {
@@ -770,6 +899,9 @@ main + .divider {
   }
   .topbar-spacer {
     display: none;
+  }
+  .topbar-cta {
+    justify-self: center;
   }
   .toggle {
     width: 232px;
