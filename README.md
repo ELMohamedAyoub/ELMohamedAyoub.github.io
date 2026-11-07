@@ -3,7 +3,7 @@
 Conversion-focused portfolio for AI engineering, agentic systems, workflow
 automation, and full-stack product work.
 
-**Live site:** [elmousatimohamedayoub.me](https://elmousatimohamedayoub.me)
+**Live site:** [elmohamedayoub.github.io](https://elmohamedayoub.github.io/)
 
 ## Stack
 
