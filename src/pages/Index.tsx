@@ -241,7 +241,7 @@ const faqs = [
   {
     question: "Are you available now?",
     answer:
-      "Yes. I am available immediately for project work, contract AI engineering, and full-time roles. I work from Casablanca and collaborate remotely.",
+      "Yes. I am taking on new client projects now. I work from Casablanca, on site across Morocco and remotely everywhere else.",
   },
 ];
 
@@ -356,18 +356,18 @@ const Hero = () => {
           <span className="status-dot" aria-hidden="true" />
           <span>Mohamed Ayoub El Mousati</span>
           <span className="eyebrow-separator">·</span>
-          <span>AI engineer</span>
+          <span>AI consultant</span>
           <span className="eyebrow-separator">·</span>
-          <span>Available now</span>
+          <span>Taking new clients</span>
         </motion.div>
 
-        <h1 className="hero-title" aria-label="AI systems that do the work.">
+        <h1 className="hero-title" aria-label="AI that makes your business more money.">
           <span className="line-mask">
-            <motion.span {...lineProps(0.12)}>AI systems</motion.span>
+            <motion.span {...lineProps(0.12)}>AI that makes your</motion.span>
           </span>
           <span className="line-mask">
             <motion.span {...lineProps(0.28)}>
-              that do the <span className="accent">work.</span>
+              business more <span className="accent">money.</span>
             </motion.span>
           </span>
         </h1>
@@ -379,10 +379,10 @@ const Hero = () => {
           transition={{ duration: 0.76, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
         >
           <p>
-            I help sales and operations teams hand off their repetitive work —
-            the follow-ups, the data entry, the checks — to AI agents that
-            actually do it. So your best people stop being the glue between your
-            tools.
+            I come into your business, sit with your team, and find where AI
+            can win you more sales and cut the work that slows you down. Then I
+            build it and put it to work — so your revenue grows without growing
+            your headcount.
           </p>
           <div className="hero-actions">
             <Magnetic>
@@ -393,7 +393,7 @@ const Hero = () => {
                 rel="noreferrer"
               >
                 <Calendar aria-hidden="true" />
-                Book a free workflow teardown
+                Book a free AI audit
               </a>
             </Magnetic>
             <Magnetic>
@@ -405,8 +405,8 @@ const Hero = () => {
           </div>
           <p className="hero-guarantee">
             <ShieldCheck aria-hidden="true" />
-            Free, 30 minutes, no pitch. You leave with a plan to automate your
-            first workflow — whether we work together or not.
+            Free, 30 minutes, no pitch. You leave knowing where AI can make or
+            save you money first — whether we work together or not.
           </p>
         </motion.div>
 
@@ -756,10 +756,9 @@ const About = () => (
           and keep using it — is the job, and that is what I do.
         </p>
         <p>
-          I also teach AI — showing engineers and teams how these systems ship
-          into real work, not just how to call an API. I work in French,
-          Arabic, and English, and I am available now for project work and
-          contract AI engineering.
+          I also teach AI — showing business owners and their teams how to put
+          it to work, not just how to call an API. I work in French, Arabic,
+          and English, on site in Morocco and remotely everywhere else.
         </p>
         <div className="about-facts">
           <span>
@@ -1037,7 +1036,7 @@ const Footer = () => (
       <a className="wordmark footer-mark" href="#top">
         AYOUB.
       </a>
-      <p>Mohamed Ayoub El Mousati · AI Engineer · Casablanca</p>
+      <p>Mohamed Ayoub El Mousati · AI Consultant · Casablanca</p>
       <div>
         <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
         <a
