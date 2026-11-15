@@ -36,7 +36,7 @@ const services = [
   {
     title: "Answer customers faster",
     description:
-      "Customers and staff get correct answers in seconds, taken from your own documents, prices, and policies — in French, Arabic, or English.",
+      "Customers and staff get correct answers in seconds, taken from your own documents, prices, and policies — in whatever language your customers speak.",
     examples: "Assistants grounded in your documents (RAG) · support · onboarding",
   },
   {
@@ -245,7 +245,7 @@ const faqs = [
   {
     question: "Are you available now?",
     answer:
-      "Yes. I am taking on new client projects now. I work from Casablanca, on site across Morocco and remotely everywhere else.",
+      "Yes. I am taking on new client projects now. I work remotely with teams in the US and worldwide, with live calls during your business hours.",
   },
 ];
 
@@ -383,7 +383,7 @@ const Hero = () => {
           transition={{ duration: 0.76, delay: 0.58, ease: [0.16, 1, 0.3, 1] }}
         >
           <p>
-            I come into your business, sit with your team, and find where AI
+            I get inside your business, work alongside your team, and find where AI
             can win you more sales and cut the work that slows you down. Then I
             build it and put it to work — so your revenue grows without growing
             your headcount.
@@ -646,7 +646,7 @@ const Websites = () => (
       <SectionHeading
         eyebrow="Live for clients"
         title="Real businesses running on my work — right now."
-        copy="Booking systems, e-commerce, and a full platform — in production for real businesses across Morocco and Canada. Click any one."
+        copy="Booking systems, e-commerce, and a full platform — in production for real businesses in Canada and Morocco. Click any one."
       />
       <div className="site-grid">
         {websites.map((site, index) => (
@@ -776,13 +776,13 @@ const About = () => (
         </p>
         <p>
           I also teach AI — showing business owners and their teams how to put
-          it to work, not just how to call an API. I work in French, Arabic,
-          and English, on site in Morocco and remotely everywhere else.
+          it to work, not just how to call an API. I work in English, French,
+          and Arabic, remotely with teams in the US and worldwide.
         </p>
         <div className="about-facts">
           <span>
             <MapPin aria-hidden="true" />
-            Casablanca · Remote
+            Remote · US and worldwide
           </span>
           <a href={`mailto:${CONTACT_EMAIL}`}>
             <Mail aria-hidden="true" />
@@ -1055,7 +1055,7 @@ const Footer = () => (
       <a className="wordmark footer-mark" href="#top">
         AYOUB.
       </a>
-      <p>Mohamed Ayoub El Mousati · AI Consultant · Casablanca</p>
+      <p>Mohamed Ayoub El Mousati · AI Consultant · Remote, US and worldwide</p>
       <div>
         <a href={`mailto:${CONTACT_EMAIL}`}>Email</a>
         <a
