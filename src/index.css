@@ -1952,3 +1952,32 @@ html.lenis body {
     padding: 36px 28px;
   }
 }
+
+/* Testimonials (rendered only when real quotes exist) */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+  background: var(--surface);
+}
+
+.testimonial {
+  padding: 34px;
+  background: var(--parchment);
+}
+
+.testimonial blockquote {
+  margin: 0 0 24px;
+  font-size: 1.15rem;
+  line-height: 1.55;
+}
+
+.testimonial p {
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}

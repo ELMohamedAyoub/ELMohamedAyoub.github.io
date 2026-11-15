@@ -21,37 +21,41 @@ const LEAD_MAGNET_URL = "/guide-5-workflows.html";
 const WEB3FORMS_ACCESS_KEY = "ec8fec88-eab3-41ab-842e-bd4779c9074a";
 
 const proof = [
-  { value: "60%", label: "less time spent prospecting" },
-  { value: "40%", label: "better pipeline follow-up" },
-  { value: "30%", label: "more output, same headcount" },
+  { value: "60%", label: "less prospecting time, so reps spend it closing" },
+  { value: "40%", label: "better follow-up on deals already in the pipeline" },
+  { value: "30%", label: "more output with the same team, no new hires" },
 ];
 
 const services = [
   {
-    title: "Agent systems",
+    title: "Close more deals",
     description:
-      "For work that needs judgment, context, and more than one step. I build agents with tools, memory, review gates, and clear failure paths.",
-    examples: "Sales follow-up, procurement, intake, research, operations",
+      "Leads get qualified, followed up, and logged without anyone chasing them. Your sales team spends its time on calls that can close.",
+    examples: "AI agents · CRM automation · Salesforce, Odoo",
   },
   {
-    title: "RAG and knowledge tools",
+    title: "Answer customers faster",
     description:
-      "For teams sitting on useful documents that nobody can search quickly. I turn that material into grounded answers, drafts, and decisions.",
-    examples: "Internal search, onboarding, support, policy, clinical guidance",
+      "Customers and staff get correct answers in seconds, taken from your own documents, prices, and policies — in French, Arabic, or English.",
+    examples: "Assistants grounded in your documents (RAG) · support · onboarding",
   },
   {
-    title: "System integrations",
+    title: "Stop copy-pasting between tools",
     description:
-      "For the work trapped between tools. I connect CRM, ERP, databases, APIs, inboxes, and automation platforms into one tracked flow.",
-    examples: "Salesforce, Odoo, n8n, Zapier, REST APIs, PostgreSQL",
+      "The data your team retypes from one tool to another moves by itself, with checks along the way. Fewer errors, hours back every week.",
+    examples: "Integrations · n8n, Zapier · CRM, ERP, inboxes, databases",
   },
   {
-    title: "Internal AI products",
+    title: "Custom AI tools for your team",
     description:
-      "For workflows that need a proper interface, not another chat window. I build the backend, dashboard, review queue, and deployment.",
+      "When the off-the-shelf tool doesn't fit, I build the one that does: the dashboard, the review queue, and the AI behind it.",
     examples: "React, Next.js, FastAPI, Node.js, Docker, cloud",
   },
 ];
+
+// Fill with real client quotes only (name, role, company). The section stays
+// hidden while this list is empty.
+const testimonials: { quote: string; name: string; role: string }[] = [];
 
 const caseStudies = [
   {
@@ -166,7 +170,7 @@ const experience = [
   {
     date: "Feb 2026 · Apr 2026",
     role: "AI Engineer",
-    company: "Remote · Contract",
+    company: "Sales and procurement team · Remote contract",
     summary:
       "Built four agent systems across sales and procurement, plus custom connectors and evaluation suites.",
   },
@@ -236,7 +240,7 @@ const faqs = [
   {
     question: "What does a first engagement look like?",
     answer:
-      "We spend 30 minutes on the workflow. If there is a good fit, I send back a short scope with the first useful release, the systems involved, what I need from you, and the delivery plan.",
+      "A free 30-minute AI audit. You leave with a 1-page plan: your top 3 AI opportunities, what each one is worth to you, and what it would cost to build. If we go ahead, I send a short scope with the first release, the systems involved, what I need from you, and the delivery plan.",
   },
   {
     question: "Are you available now?",
@@ -308,8 +312,8 @@ const Navigation = () => {
         <div className="nav-links">
           <a href="#services">Services</a>
           <a href="#work">Work</a>
-          <a href="#websites">Websites</a>
-          <a href="#experience">Experience</a>
+          <a href="#websites">Live</a>
+          <a href="#experience">Track record</a>
           <a href="#about">About</a>
         </div>
         <Magnetic strength={0.4} className="nav-contact-magnetic">
@@ -405,8 +409,9 @@ const Hero = () => {
           </div>
           <p className="hero-guarantee">
             <ShieldCheck aria-hidden="true" />
-            Free, 30 minutes, no pitch. You leave knowing where AI can make or
-            save you money first — whether we work together or not.
+            Free, 30 minutes, no pitch. You leave with a 1-page plan: your top 3
+            AI opportunities, what each is worth, and what it costs to build —
+            whether we work together or not.
           </p>
         </motion.div>
 
@@ -492,17 +497,12 @@ const Services = () => (
           className="service-item service-item--feature"
           delay={services.length * 0.06}
         >
-          <span className="service-number accent">05 · The front of the funnel</span>
-          <h3>Conversion-focused websites</h3>
+          <span className="service-number accent">05 · If the leads aren't coming in yet</span>
+          <h3>A website that brings them in</h3>
           <p>
-            An agent is useless if no lead ever reaches it. I build high-ticket
-            sites with one job: turn visitors into booked calls. Design, copy,
-            and build handled as one thing — not three freelancers and a
-            deadline that slips.
+            AI can't close a lead that never arrives. If that's the real
+            problem, I build the site that turns visitors into booked calls.
           </p>
-          <span className="service-examples">
-            Design · Copy · React, Next.js · Built to convert
-          </span>
         </Reveal>
       </div>
       <Reveal className="services-cta">
@@ -644,8 +644,8 @@ const Websites = () => (
   <section id="websites" className="websites section">
     <div className="shell">
       <SectionHeading
-        eyebrow="Live websites"
-        title="Built to book and sell — live right now."
+        eyebrow="Live for clients"
+        title="Real businesses running on my work — right now."
         copy="Booking systems, e-commerce, and a full platform — in production for real businesses across Morocco and Canada. Click any one."
       />
       <div className="site-grid">
@@ -691,8 +691,8 @@ const Experience = () => (
   <section id="experience" className="experience section">
     <div className="shell">
       <SectionHeading
-        eyebrow="Experience"
-        title="Built in sales, procurement, logistics, and healthcare."
+        eyebrow="Track record"
+        title="Trusted in sales, procurement, logistics, and healthcare."
         copy="Different industries. The same hard part: getting the system into the daily work."
       />
       <div className="experience-list">
@@ -700,8 +700,8 @@ const Experience = () => (
           <Reveal className="experience-row" delay={index * 0.05} key={item.company}>
             <p className="experience-date">{item.date}</p>
             <div>
-              <h3>{item.role}</h3>
-              <p className="experience-company">{item.company}</p>
+              <h3>{item.company}</h3>
+              <p className="experience-company">{item.role}</p>
             </div>
             <p className="experience-summary">{item.summary}</p>
           </Reveal>
@@ -710,6 +710,25 @@ const Experience = () => (
     </div>
   </section>
 );
+
+const Testimonials = () =>
+  testimonials.length === 0 ? null : (
+    <section id="testimonials" className="testimonials section">
+      <div className="shell">
+        <SectionHeading eyebrow="Clients" title="In their words." />
+        <div className="testimonial-grid">
+          {testimonials.map((item, index) => (
+            <Reveal className="testimonial" delay={index * 0.06} key={item.name}>
+              <blockquote>“{item.quote}”</blockquote>
+              <p>
+                <strong>{item.name}</strong> · {item.role}
+              </p>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 
 const Process = () => (
   <section className="process section">
@@ -1080,6 +1099,7 @@ const Index = () => (
       <Ticker />
       <Services />
       <Work />
+      <Testimonials />
       <Websites />
       <Experience />
       <Process />
