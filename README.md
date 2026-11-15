@@ -1,7 +1,7 @@
 # Ayoub El Mousati — Portfolio
 
-Conversion-focused portfolio for AI engineering, agentic systems, workflow
-automation, and full-stack product work.
+Site for my AI consulting work: AI systems, workflow automation, and
+full-stack products that help businesses win more sales.
 
 **Live site:** [elmohamedayoub.github.io](https://elmohamedayoub.github.io/)
 

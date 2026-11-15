@@ -5,6 +5,7 @@ import {
   LINKS,
   OFFER,
   SERVICES,
+  TESTIMONIALS,
   type Inline,
   type Made,
 } from "@/content/site";
@@ -128,6 +129,19 @@ export const MadeGrid = ({ items }: { items: Made[] }) => (
         </div>
       );
     })}
+  </div>
+);
+
+export const Testimonials = () => (
+  <div className="prose">
+    {TESTIMONIALS.map((item) => (
+      <blockquote key={item.name} className="testimonial">
+        <p>“{item.quote}”</p>
+        <footer>
+          {item.name} · {item.role}
+        </footer>
+      </blockquote>
+    ))}
   </div>
 );
 

@@ -16,14 +16,14 @@ export const LINKS = {
 // The free pipeline review is the one offer the professional page sells.
 export const OFFER = {
   cta: "Book a free pipeline review",
-  note: "Free for businesses looking to fix their pipeline.",
+  note: "Free, 30 minutes. You leave with a 1-page plan: the top 3 places you're losing sales, what each is worth, and what it costs to fix.",
   guarantee: "If the first build doesn't do the job we scope together, you don't pay.",
 };
 
 export const HERO = {
   headline: "Win more of the leads you already get.",
   pitch:
-    "I build AI systems that catch stalled deals, draft the follow-up and keep your pipeline moving. Your team reviews everything before it goes out.",
+    "I get inside your business, work alongside your team and find where AI can win you more sales. Then I build it: systems that catch stalled deals, draft the follow-up and keep your pipeline moving. Your team reviews everything before it goes out.",
   proof:
     "One sales automation suite I worked on: about 60% less manual prospecting, about 40% better pipeline follow-up.",
 };
@@ -32,7 +32,7 @@ export const HERO = {
 export const SERVICES: { name: string; detail: string }[] = [
   {
     name: "Free pipeline review",
-    detail: "A 30-minute call. We find where sales are slipping and what to fix first. Free for businesses.",
+    detail: "A 30-minute call. You leave with a 1-page plan: the top 3 places you're losing sales, what each is worth, and what it costs to fix. Free.",
   },
   {
     name: "One workflow, built",
@@ -72,7 +72,7 @@ export const ABOUT: Record<Mode, Inline[][]> = {
       },
     ],
     [
-      { text: "I'm Ayoub, an AI engineer in Casablanca. I find where that's happening in your business and " },
+      { text: "I'm Ayoub, an AI consultant working with teams in the US and worldwide. I get inside your business, find where that's happening and " },
       { text: "build the system that fixes it", href: "#work" },
       { text: "." },
     ],
@@ -183,6 +183,9 @@ export const MADE: Made[] = [
     badge: "Pilot",
   },
 ];
+
+// Real client quotes only. The section stays hidden while this list is empty.
+export const TESTIMONIALS: { quote: string; name: string; role: string }[] = [];
 
 // Personal mode. Placeholder lines, rewrite them in your own words.
 export const CURRENTLY: { label: string; value: string }[] = [

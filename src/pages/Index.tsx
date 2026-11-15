@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ABOUT, HERO, MADE, NAME } from "@/content/site";
+import { ABOUT, HERO, MADE, NAME, TESTIMONIALS } from "@/content/site";
 import { useMode } from "@/hooks/useMode";
 import { ModeToggle } from "@/components/illuminated/ModeToggle";
 import { Portrait } from "@/components/illuminated/Portrait";
@@ -12,6 +12,7 @@ import {
   Prose,
   Section,
   Services,
+  Testimonials,
   WorkList,
   WorkWithMe,
 } from "@/components/illuminated/Sections";
@@ -53,6 +54,14 @@ const Professional = () => (
       <h3 className="subhead">Also built</h3>
       <MadeGrid items={OTHER_WORK} />
     </Section>
+    {TESTIMONIALS.length > 0 && (
+      <>
+        <Divider />
+        <Section id="clients" title="In their words">
+          <Testimonials />
+        </Section>
+      </>
+    )}
     <Divider />
     <Section id="hire" title="Ways to work together">
       <Services />
@@ -124,7 +133,7 @@ const Index = () => {
       <Divider />
       <footer className="footer">
         <span>© {new Date().getFullYear()} Mohamed Ayoub El Mousati</span>
-        <span>Casablanca</span>
+        <span>Remote · US and worldwide</span>
       </footer>
     </div>
   );

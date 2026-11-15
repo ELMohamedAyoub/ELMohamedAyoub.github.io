@@ -920,3 +920,21 @@ main + .divider {
     font-size: 1.15rem;
   }
 }
+
+/* Testimonials (rendered only when real quotes exist) */
+.testimonial {
+  margin: 0 0 1.75rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid hsl(var(--gold));
+}
+
+.testimonial p {
+  margin: 0 0 0.5rem;
+  font-size: 1.15rem;
+  font-style: italic;
+}
+
+.testimonial footer {
+  font-size: 0.9rem;
+  color: hsl(var(--muted));
+}
